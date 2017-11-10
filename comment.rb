@@ -1,6 +1,5 @@
 #require 'dm-core'
 #require 'dm-migrations'
-#require 'rubygems'
 require 'dm-timestamps'
 
 #DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/hw3.db")
