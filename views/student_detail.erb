@@ -1,0 +1,39 @@
+
+<div class="container">
+  <h2>Student Information:</h2>     
+  <table class="table">
+    <thead>
+      <tr>
+      	<th></th>
+      	<th></th>
+		<th>Student ID</th>     
+	    <th>Firstname</th>	
+        <th>Lastname</th>
+        <th>Birthday</th>
+		<th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      	<tr>
+      		<td>
+      			<form method="get" action="/editpage_stu">
+      				<input type="hidden" name="id" value="<%= @student.student_id %>">
+      				<input class="btn btn-primary" type="submit" value="Edit" role="button">
+      			</form>
+      		</td>
+      		<td>
+      			<form method="post" action="/delete_stu">
+      				<input type="hidden" name="id" value="<%= @student.student_id %>">
+      				<input class="btn btn-primary" type="submit" value="Delete" role="button">
+      			</form>
+      		</td>
+      		<td><%= @student.student_id %></td>
+      		<td><%= @student.firstname %></td>
+	        <td><%= @student.lastname %></td>
+			<td><%= @student.birthday.strftime("%Y-%m-%d") %></td>
+			<td><%= @student.address %></td>
+      	</tr>
+    </tbody>
+  </table>
+  <a class="btn btn-primary" href="/students" role="button"> << Previous </a>  
+</div>

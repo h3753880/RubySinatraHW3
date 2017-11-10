@@ -1,0 +1,15 @@
+
+<div class="container">
+  <h2>Comments:</h2>     
+  <table class="table">
+    <tbody>
+	     <% @comments.each do |x| %>
+      	<tr>
+	        <td><a href="/comments/<%= x.id %>"><%= x.comment %></a></td>
+	        <td><%= x.created_at.strftime("%Y-%m-%d %H:%M:%S")  %></td>
+      	</tr>
+	     <% end %>
+    </tbody>
+  </table>
+  <a class="btn btn-primary" href="/new_comment" role="button">Add A New Comment</a>  
+</div>

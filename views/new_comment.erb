@@ -1,0 +1,22 @@
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script>
+      $( function() {
+        $("#comm").validate();
+      } );
+</script>
+<div class="container">
+  <h2>Add A Comment</h2>
+  <form method="post" action="/add_comment" id="comm">
+    <div class="form-group">
+      <label for="f">Name:</label>
+      <input type="text" class="form-control" id="f" name="name" maxlength="40" required>
+    </div>
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea class="form-control" rows="5" id="comment" name="comment" maxlength="200" required></textarea>
+    </div>
+    <a class="btn btn-primary" href="/comments" role="button"> << Previous </a>
+    <input class="btn btn-primary" type="submit" value="Add" role="button">
+  </form>
+</div>

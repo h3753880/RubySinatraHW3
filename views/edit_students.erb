@@ -1,0 +1,40 @@
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script>
+      $( function() {
+        $("#stu").validate();
+
+        $( "#datepicker" ).datepicker();
+        $( "#datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+        $( "#datepicker" ).val("<%= @student.birthday.strftime("%Y-%m-%d") %>");
+      } );
+</script>
+<div class="container">
+  <h2>Edit A Student</h2>
+  <form method="post" action="/edit_stu">
+    <div class="form-group">
+      <label for="usr">Student ID: <%= @student.student_id %></label>
+      <input type="hidden" class="form-control" id="usr" value="<%= @student.student_id %>" name="id">
+    </div>
+    <div class="form-group">
+      <label for="f">Firstname:</label>
+      <input type="text" class="form-control" id="f" value="<%= @student.firstname %>" name="firstname" maxlength="40" required>
+    </div>
+    <div class="form-group">
+      <label for="l">Lastname:</label>
+      <input type="text" class="form-control" id="l" value="<%= @student.lastname %>" name="lastname" maxlength="40" required>
+    </div>
+    <div class="form-group">
+      <label for="datepicker">Birthday:</label>
+      <input type="text" class="form-control" id="datepicker" value="<%= @student.birthday.strftime("%Y-%m-%d")%>" name="birthday" required>
+    </div>
+    <div class="form-group">
+      <label for="pa">Address:</label>
+      <input type="text" class="form-control" id="pa" value="<%= @student.address %>" name="address" maxlength="48" required>
+    </div>
+    <a class="btn btn-primary" href="/students" role="button"> Cancel </a>
+    <input class="btn btn-primary" type="submit" value="Confirm" role="button">
+  </form>
+</div>

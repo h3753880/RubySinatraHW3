@@ -1,0 +1,22 @@
+
+<div class="container">
+  <h2>Students List:</h2>
+  <h3 style="color:red"><%= @msg %></h3>     
+  <table class="table">
+    <thead>
+      <tr>
+		    <th>Student ID</th>     
+		    <th>Student Name</th>	
+      </tr>
+    </thead>
+    <tbody>
+	     <% @students.each do |stu| %>
+      	<tr>
+	        <td><a href="/students/<%= stu.student_id %>"><%= stu.student_id %></a></td>
+	        <td><a href="/students/<%= stu.student_id %>"><%= stu.firstname + " " + stu.lastname %></a></td>
+      	</tr>
+	     <% end %>
+    </tbody>
+  </table>
+  <a class="btn btn-primary" href="/newstu" role="button">Add New Student</a>  
+</div>
