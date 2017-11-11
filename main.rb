@@ -46,6 +46,7 @@ post '/login' do
     redirect '/students'
   else
     # not match, send back to login page
+    @err = "wrong username or password"
     erb :login
   end
 end
